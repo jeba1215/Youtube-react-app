@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import YoutubeCardGrid from './YoutubeCard/YoutubeCardGrid';
 
 class App extends Component {

@@ -1,4 +1,25 @@
 .thumbnail-with-text{
-	text-align: justify;
-	width: 480;
+	text-align: left;
+}
+
+.YoutubeCard{
+	padding-top: 20px;
+}
+
+.YoutubeCardGrid{
+	max-width: 95%;
+	padding-left: 3%;
+}
+
+.videotitle{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.videochannel{
+	font-size: 11px;
+}
+
+.videodate{
+	font-size: 10px;
 }
