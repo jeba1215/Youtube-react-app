@@ -119,7 +119,6 @@ class App extends Component {
       render() {
         return (
           <div className="App">
-          App
           <YoutubeCardGrid videoItems={this.state.videoItems} ></YoutubeCardGrid>
           <button onClick={this.handleClick}>React Button</button>
           </div>

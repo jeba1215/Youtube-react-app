@@ -30,7 +30,46 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-  <div id="root"></div>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/YouTube_play_buttom_icon_%282013-2017%29.svg" width="50" height="50" alt="">
+      YouTube SubPage 
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">
+            <img src="https://image.flaticon.com/icons/svg/61/61225.svg" height="20" width="20" alt="">
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Columns
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">3</a>
+            <a class="dropdown-item" href="#">4</a>
+          </li>
+        </ul>
+        <!--Add buttons to initiate auth sequence and sign out-->
+        <button id="authorize-button" style="display: none;">Authorize</button>
+        <button id="signout-button" style="display: none;">Sign Out</button>
+        
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+
+    <div id="root"></div>
   <!--
     This HTML file is a template.
     If you open it directly in the browser, you will see an empty page.
@@ -40,12 +79,7 @@
       
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-    <p>YouTube Data API Quickstart</p>
-    
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize-button" style="display: none;">Authorize</button>
-    <button id="signout-button" style="display: none;">Sign Out</button>
+    -->    
     
     <pre id="content"></pre>
     
@@ -57,7 +91,7 @@
   <script type="text/javascript">
     // Client ID and API key from the Developer Console
     var CLIENT_ID = '349110622264-ujhg1qhv208iofc6k91hq1gatjqcruv6.apps.googleusercontent.com';
-      
+
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest"];
       
@@ -144,10 +178,7 @@
           'part': 'snippet,contentDetails,statistics',
           'forUsername': 'GoogleDevelopers'
         }).then(function(response) {
-          var channel = response.result.items[0];
-          appendPre('This channel\'s ID is ' + channel.id + '. ' +
-          'Its title is \'' + channel.snippet.title + ', ' +
-          'and it has ' + channel.statistics.viewCount + ' views.');
+          var channel = response.result.items[0];          
         });
       }
       
